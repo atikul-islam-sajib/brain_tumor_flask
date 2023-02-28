@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/config/workspace/static/style.css">
+  <style>
+        .container
+        {
+          margin: 0;
+          padding: 0;
+          text-align: center;
+          margin-top: 80px;
+        }
+        .heading
+        {
+          text-transform: uppercase;
+          color: black;
+          padding: 2px;
+          border: 2px solid black;
+          background: gray;
+        }
+        .input-dec
+        {
+          height:30px;
+          width: 30%;
+        }
+        .copy-right
+        {
+          margin-top: 20%;
+          color: #873663;
+          text-align: center;
+          font-size: 20px;
+        }
+        .image
+        {
+          margin-top:20px;
+          height: 350px;
+        }
+        .prediction
+        {
+           color: #f56c42;
+        }
+        .horizontal
+        {
+          border: 1px black solid;
+        }
+  </style>
+
+</head>
+<body>
+	<dir class="container">
+		<h1 class="heading">Welcome to the Brain Tumor Classification on Image</h1>
+      <form action="/" method = "post" enctype="multipart/form-data">
+        <input type="file" id="file" name="file" autocomplete="off" required>
+        <input type="submit" value = "Click me to submit"><br>
+        <img src = {{img}} class = "image" alt = "Smiley face">
+        {% if result == 0 %}
+        <h2 class = "prediction">The prediction is GLIOMA</h2>
+        {% elif result == 1 %}
+          <h2 class = "prediction">The prediction is MENINGIOMA</h2>
+        {% elif result == 2 %}
+          <h2 class = "prediction">The prediction is NO TUMOR</h2>
+        {% elif result == 3 %}
+          <h2 class = "prediction">The prediction is PITUITARY</h2>
+
+        {% endif %}
+      </form>
+	</dir>
+
+	<h4 class="copy-right">IMPORTANT NOTICE: This is under developing and trained with 20,000 image datasets with CNN - Architecture that was built by me, with 5 Convolution layer - 256, 128, 64, 32 respectively filters, stride size that I used is (2*2) and padding equals to valid in some cases. Later, I will upload the architecture with this website so that all you can access it for your developing purpose. Thanks !<hr class = "horizontal"><br> Courtesy by: Atikul Islam Sajib, Machine Learning Engineer.</h4><br>
+</body>
+</html>
