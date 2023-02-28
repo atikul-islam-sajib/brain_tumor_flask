@@ -28,4 +28,3 @@ tqdm==4.64.1
 Werkzeug==2.2.3
 widgetsnbextension==3.6.2
 wordcloud==1.8.2.2
-zipp==3.14.0
